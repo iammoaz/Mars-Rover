@@ -54,14 +54,54 @@
 		41B418231E2AB7D600F65488 /* Mars Rover */ = {
 			isa = PBXGroup;
 			children = (
+				41B4183A1E2B522300F65488 /* Model */,
+				41B418391E2B521E00F65488 /* View */,
+				41B418381E2B521700F65488 /* Controller */,
+				41B418371E2B521000F65488 /* Resources */,
+				41B418361E2B520600F65488 /* Supporting Files */,
+			);
+			path = "Mars Rover";
+			sourceTree = "<group>";
+		};
+		41B418361E2B520600F65488 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				41B418241E2AB7D600F65488 /* AppDelegate.swift */,
-				41B418261E2AB7D600F65488 /* ViewController.swift */,
-				41B418281E2AB7D600F65488 /* Main.storyboard */,
-				41B4182B1E2AB7D600F65488 /* Assets.xcassets */,
 				41B4182D1E2AB7D600F65488 /* LaunchScreen.storyboard */,
 				41B418301E2AB7D600F65488 /* Info.plist */,
 			);
-			path = "Mars Rover";
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41B418371E2B521000F65488 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41B4182B1E2AB7D600F65488 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		41B418381E2B521700F65488 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				41B418261E2AB7D600F65488 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		41B418391E2B521E00F65488 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41B418281E2AB7D600F65488 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		41B4183A1E2B522300F65488 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
