@@ -14,6 +14,13 @@ class ViewController: UIViewController {
     
     fileprivate var photos: [Photo]?
     
+    lazy var downloadQueue: OperationQueue = {
+        var queue = OperationQueue()
+        queue.name = "Image Downloader Queue"
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +56,10 @@ extension ViewController: UITableViewDataSource {
         
         let imageCell = cell as! PhotoCell
         imageCell.configure(with: photos[indexPath.row])
+        
+        if let downloader = imageCell.imageDownloader {
+            downloadQueue.addOperation(downloader)
+        }
         return imageCell
     }
 }

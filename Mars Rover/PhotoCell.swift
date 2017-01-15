@@ -13,24 +13,34 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     
     static let reuseIdentifier = String(describing: PhotoCell.self)
-
+    
+    var imageDownloader: ImageDownloader?
+    
+    override func prepareForReuse() {
+        self.imageDownloader?.cancel()
+        self.imageDownloader = nil
+    }
+    
     public func configure(with photo: Photo) {
         if let image = ImageCache.instance.get(with: photo.imageURL) {
             self.photoImageView.image = image
         } else {
-            loadImage(from: photo.imageURL)
+            configureImageDownloader(for: photo)
         }
     }
-
-    private func loadImage(from imageURL: String) {
-        DispatchQueue.global().async {
-            if let imageData = try? Data(contentsOf: URL(string: imageURL)!) {
-                let image = UIImage(data: imageData)
-                ImageCache.instance.add(with: imageURL, image: image!)
-                DispatchQueue.main.async {
-                    self.photoImageView.image = image
-                }
+    
+    func configureImageDownloader(for photo: Photo) {
+        let downloader = ImageDownloader(photo: photo)
+        downloader.completionBlock = {
+            if downloader.isCancelled {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.photoImageView.image = ImageCache.instance.get(with: photo.imageURL)
             }
         }
+        
+        self.imageDownloader = downloader
     }
 }

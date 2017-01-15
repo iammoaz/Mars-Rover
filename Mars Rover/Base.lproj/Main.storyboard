@@ -35,14 +35,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-VQ-JDZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
+                                                    <rect key="frame" x="4" y="4" width="367" height="171.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Qzn-VQ-JDZ" secondAttribute="trailing" id="5dx-VS-doc"/>
-                                                <constraint firstItem="Qzn-VQ-JDZ" firstAttribute="top" secondItem="i5M-o7-nx9" secondAttribute="top" id="7MN-nm-LG5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qzn-VQ-JDZ" secondAttribute="trailing" constant="4" id="5dx-VS-doc"/>
+                                                <constraint firstItem="Qzn-VQ-JDZ" firstAttribute="top" secondItem="i5M-o7-nx9" secondAttribute="top" constant="4" id="7MN-nm-LG5"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qzn-VQ-JDZ" secondAttribute="bottom" constant="4" id="f8k-je-wH0"/>
-                                                <constraint firstItem="Qzn-VQ-JDZ" firstAttribute="leading" secondItem="i5M-o7-nx9" secondAttribute="leading" id="rdq-jb-Zbv"/>
+                                                <constraint firstItem="Qzn-VQ-JDZ" firstAttribute="leading" secondItem="i5M-o7-nx9" secondAttribute="leading" constant="4" id="rdq-jb-Zbv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>

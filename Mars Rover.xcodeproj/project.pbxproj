@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412BE24A1E2BBA4900F43296 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BE2491E2BBA4900F43296 /* ImageDownloader.swift */; };
 		41B418251E2AB7D600F65488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B418241E2AB7D600F65488 /* AppDelegate.swift */; };
 		41B418271E2AB7D600F65488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B418261E2AB7D600F65488 /* ViewController.swift */; };
 		41B4182A1E2AB7D600F65488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B418281E2AB7D600F65488 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		412BE2491E2BBA4900F43296 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		41B418211E2AB7D500F65488 /* Mars Rover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mars Rover.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B418241E2AB7D600F65488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41B418261E2AB7D600F65488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412BE2481E2BBA3A00F43296 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				412BE2491E2BBA4900F43296 /* ImageDownloader.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		41B418181E2AB7D500F65488 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		41B418231E2AB7D600F65488 /* Mars Rover */ = {
 			isa = PBXGroup;
 			children = (
+				412BE2481E2BBA3A00F43296 /* Helper */,
 				41B4183A1E2B522300F65488 /* Model */,
 				41B418391E2B521E00F65488 /* View */,
 				41B418381E2B521700F65488 /* Controller */,
@@ -191,6 +202,7 @@
 			files = (
 				41B418421E2B8ED100F65488 /* ImageCache.swift in Sources */,
 				41B4183C1E2B756C00F65488 /* Photo.swift in Sources */,
+				412BE24A1E2BBA4900F43296 /* ImageDownloader.swift in Sources */,
 				41B418401E2B837100F65488 /* PhotoCell.swift in Sources */,
 				41B418271E2AB7D600F65488 /* ViewController.swift in Sources */,
 				41B418251E2AB7D600F65488 /* AppDelegate.swift in Sources */,
@@ -356,6 +368,7 @@
 				41B418351E2AB7D600F65488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
