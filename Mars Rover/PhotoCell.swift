@@ -15,14 +15,18 @@ class PhotoCell: UITableViewCell {
     static let reuseIdentifier = String(describing: PhotoCell.self)
 
     public func configure(with photo: Photo) {
-        loadImage(from: photo.imageURL)
+        if let image = ImageCache.instance.get(with: photo.imageURL) {
+            self.photoImageView.image = image
+        } else {
+            loadImage(from: photo.imageURL)
+        }
     }
 
     private func loadImage(from imageURL: String) {
         DispatchQueue.global().async {
             if let imageData = try? Data(contentsOf: URL(string: imageURL)!) {
                 let image = UIImage(data: imageData)
-                
+                ImageCache.instance.add(with: imageURL, image: image!)
                 DispatchQueue.main.async {
                     self.photoImageView.image = image
                 }
