@@ -19,9 +19,14 @@ class PhotoCell: UITableViewCell {
     }
 
     private func loadImage(from imageURL: String) {
-        if let imageData = try? Data(contentsOf: URL(string: imageURL)!) {
-            let image = UIImage(data: imageData)
-            self.photoImageView.image = image
+        DispatchQueue.global().async {
+            if let imageData = try? Data(contentsOf: URL(string: imageURL)!) {
+                let image = UIImage(data: imageData)
+                
+                DispatchQueue.main.async {
+                    self.photoImageView.image = image
+                }
+            }
         }
     }
 }

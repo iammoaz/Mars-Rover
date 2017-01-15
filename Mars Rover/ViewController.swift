@@ -22,9 +22,14 @@ class ViewController: UIViewController {
     }
     
     func loadPhotos() {
-        Photo.loadPhotosAsync { (photos) in
-            self.photos = photos
-            self.tableView.reloadData()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) { 
+            Photo.loadPhotosAsync { (photos) in
+                self.photos = photos
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
 }
