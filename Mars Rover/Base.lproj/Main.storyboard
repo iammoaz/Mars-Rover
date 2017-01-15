@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mars Rover-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mars_Rover" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,18 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GQY-8H-gP4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="180" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GQY-8H-gP4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="dhK-Yn-jJS" customClass="PhotoCell" customModule="Mars_Rover" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="180" id="dhK-Yn-jJS" customClass="PhotoCell" customModule="Mars_Rover" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dhK-Yn-jJS" id="i5M-o7-nx9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-VQ-JDZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-VQ-JDZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
                                                 </imageView>
                                             </subviews>
@@ -43,6 +45,7 @@
                                                 <constraint firstItem="Qzn-VQ-JDZ" firstAttribute="leading" secondItem="i5M-o7-nx9" secondAttribute="leading" id="rdq-jb-Zbv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="photoImageView" destination="Qzn-VQ-JDZ" id="GsI-Ny-OSV"/>
                                         </connections>
@@ -58,7 +61,7 @@
                             <constraint firstAttribute="trailing" secondItem="GQY-8H-gP4" secondAttribute="trailing" id="kpu-YO-vvW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="NiG-ug-7nQ"/>
+                    <navigationItem key="navigationItem" title="Mars Rover" id="NiG-ug-7nQ"/>
                     <connections>
                         <outlet property="tableView" destination="GQY-8H-gP4" id="ryq-Xi-1KA"/>
                     </connections>

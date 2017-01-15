@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
+        loadPhotos()
+    }
+    
+    func loadPhotos() {
+        Photo.loadPhotosAsync { (photos) in
+            self.photos = photos
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -31,7 +39,12 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoCell.reuseIdentifier, for: indexPath)
+        guard let photos = self.photos else { return cell }
+        
+        let imageCell = cell as! PhotoCell
+        imageCell.configure(with: photos[indexPath.row])
+        return imageCell
     }
 }
 
