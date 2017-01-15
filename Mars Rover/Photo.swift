@@ -15,3 +15,13 @@ struct Photo {
         self.imageURL = imageURL
     }
 }
+
+extension Photo {
+    init(dictionary: JSONDictionary) throws {
+        guard let imageSRC = dictionary["img_src"] as? String else {
+            throw SerializationError.missing("img_src")
+        }
+        
+        self.imageURL = imageSRC.replacingOccurrences(of: "http", with: "https")
+    }
+}

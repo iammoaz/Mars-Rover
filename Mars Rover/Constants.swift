@@ -8,6 +8,13 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: Any]
+
+enum SerializationError: Error {
+    case missing(String)
+    case invalid(String, Any)
+}
+
 struct Constants {
     static let API_KEY = "qpqC7TejUnC7nTNKBtzcdYFx0g4naMrlOGpapxdM"
     static let BASE_URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos"
